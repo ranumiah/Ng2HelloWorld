@@ -31,4 +31,7 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
+# NPM Packages Instation Folder
 node_modules/
+
+app/*.js*
