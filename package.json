@@ -2,7 +2,9 @@
   "name": "angular2-aspnetcore-starter",
   "version": "0.0.1",
   "description": "Starter application using Angular 2 and ASP.NET Core",
-  "scripts": {},
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"dotnet run\" "
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",

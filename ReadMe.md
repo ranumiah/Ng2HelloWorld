@@ -8,6 +8,7 @@ dotnet run			==> This runs the exe.
 NPM
     npm update --save	    ==> Update all packages inside package.json
     npm install	    	    ==> Install all packages define in pacakge.json to node_modules/* folder
+    npm start	    	    ==> Runs the command specified in the Package.Json
 
 Version Range Definition
     version	            ==> Must match version exactly
@@ -32,8 +33,9 @@ Version Range Definition
 Package.Json
     The dependencies are the libraries that your application uses at runtime.
     The devDependencies are libraries you use during your build.
-    Shim    ==> It is a piece of code that implements language features not natively supported by the browser.
-    TypeScript    ==> It provides Optional Static Typing, Classe, and Interfaces. It is the transpiler used by SystemJS, which it uses to transpile TypeScript into JavaScript
+    Shim        ==> It is a piece of code that implements language features not natively supported by the browser.
+    TypeScript  ==> It provides Optional Static Typing, Classe, and Interfaces. It is the transpiler used by SystemJS, which it uses to transpile TypeScript into JavaScript
+                    tsc -w    ==> Runs the TypeScript compiler in watch mode so whenever you save a modified TypeScript file, the compiler regenerates the JavaScript
 
 The dependencies section of package.json contains:
     Features    ==> Feature packages give the application framework and utility capabilities.
