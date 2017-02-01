@@ -1,1 +1,26 @@
-Hello, World!
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Angular 2, ASP.NET Core Starter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <!--This statement uses SystemJS to import the app module, defined in the SystemJS configuration, to request app/main.js from the server-->
+    <script>
+        System.import('app').catch(function (err) { console.error(err); });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
