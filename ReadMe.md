@@ -67,3 +67,7 @@ DevDependencies Packages
     concurrently	        ==> A utility to run multiple npm commands concurrently on OS/X, Windows, and Linux operating systems.
     typescript	            ==> the TypeScript language server, including the tsc TypeScript compiler.
     @types/*	            ==> TypeScript definition files. Learn more about it in the TypeScript Configuration chapter.
+
+Angular 2 component - is essentially a JavaScript class adorned with the @Component decorator in which you define a template.  The class encapsulates the Behavior of the componenet and the template encapsulates the View.
+
+Components are the building blocks of your application. At the root of your application, is a component containing other components, composed together to form a user interface. This composition is sometimes called a component tree where the root component contains all of the other components in your application and leaf components represent the re-usable widgets of your application with which the user interacts.
