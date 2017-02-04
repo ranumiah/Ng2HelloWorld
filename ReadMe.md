@@ -68,6 +68,22 @@ DevDependencies Packages
     typescript	            ==> the TypeScript language server, including the tsc TypeScript compiler.
     @types/*	            ==> TypeScript definition files. Learn more about it in the TypeScript Configuration chapter.
 
-Angular 2 component - is essentially a JavaScript class adorned with the @Component decorator in which you define a template.  The class encapsulates the Behavior of the componenet and the template encapsulates the View.
+Angular 2 component
 
-Components are the building blocks of your application. At the root of your application, is a component containing other components, composed together to form a user interface. This composition is sometimes called a component tree where the root component contains all of the other components in your application and leaf components represent the re-usable widgets of your application with which the user interacts.
+An Angular 2 component is essentially a JavaScript class adorned with the @Component decorator in which you define a template.
+The class encapsulates the behavior of the component and the template encapsulates the view.
+Angular does the work to wire the view to the behavior for you.
+
+Components are the building blocks of your application. At the root of your application, is a component containing other components, composed together to form a user interface.
+This composition is sometimes called a component tree where the root component contains all of the other components in your application and leaf components represent the re-usable widgets of your application with which the user interacts.
+
+Angular 2 Module
+
+Angular modules are defined with the NgModule decorator where as ECMAScript 2015 (ES2015) are just modules.
+The difference between an NgModule and an ES2015 module?
+    You can think of ES2015 modules as encapsulated, reusable units of code whereas NgModules are encapsulated, reusable units of the application. NgModules are composed of ES2015 modules making them a sort of higher-order unit. NgModules is eqivlant of C# as namespaces or assemblies.
+
+Angular requires you to have at least one NgModule in your application.
+
+Angular 2 Bootstrap
+Angular 2 provides multiple ways to bootstrap your application depending on where it is running (server versus browser) and whether it has been compiled ahead of time (AOT) or just-in-time (JIT) compilations.
