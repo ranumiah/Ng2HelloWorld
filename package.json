@@ -6,8 +6,9 @@
   // You invoke it by entering npm start in the terminal because start is a built in command. However, if you change the scropt to the following: 
   // myStartScript: "tsc && concurrently \"tsc -w\" \"dotnet run\" "  ==> npm run myStartScript would achieve the same result as start.
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"dotnet run\" ",
-     // The npm install command is one of the npm commands with special behavior. You configure an npm script named install but the commands get executed after the default npm install command has finished.
+    // type script and .Net watch for file modification and then reload in compiled form either using TypeScript or .Net Compiler
+    "start": "tsc && concurrently \"tsc -w\" \"dotnet watch run\" ",
+    // The npm install command is one of the npm commands with special behavior. You configure an npm script named install but the commands get executed after the default npm install command has finished.
     // Therefore, npm install ==> will install npm dependency and then restore nuget packages for dotnet
     "install": "dotnet restore",
     // npm run clean follow by npm install in the terminal and you have a fresh copy of the required npm and .NET dependencies
