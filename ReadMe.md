@@ -1,14 +1,36 @@
 .Net Core Basics
-
-dotnet --version	==> This tells you which version of dotnet core you have installed
-dotnet new [Type]	==> This creates a dotnet template based on the type specified i.e console, classlib, web, mvc, webapi, sln, etc
-dotnet restore		==> This downloads packages from Nuget, which are need in the project
-dotnet run			==> This runs the exe.
+    dotnet --version	==> This tells you which version of dotnet core you have installed
+    dotnet new [Type]	==> This creates a dotnet template based on the type specified i.e console, classlib, web, mvc, webapi, sln, etc
+    dotnet restore		==> This downloads packages from Nuget, which are need in the project
+    dotnet run			==> This runs the exe.
 
 NPM
     npm update --save	    ==> Update all packages inside package.json
     npm install	    	    ==> Install all packages define in pacakge.json to node_modules/* folder
     npm start	    	    ==> Runs the command specified in the Package.Json
+    npm run [scripts:""]
+
+Package.json
+    // This script compiles the TypeScript files and then runs the TypeScript compiler in watch mode alongside running the ASP.NET application.
+    // You invoke it by entering npm start in the terminal because start is a built in command. However, if you change the scropt to the following: 
+    // myStartScript: "tsc && concurrently \"tsc -w\" \"dotnet run\" "  ==> npm run myStartScript would achieve the same result as start.
+    "scripts": {
+        // type script and .Net watch for file modification and then reload in compiled form either using TypeScript or .Net Compiler
+        "start": "tsc && concurrently \"tsc -w\" \"dotnet watch run\" ",
+        // The npm install command is one of the npm commands with special behavior. You configure an npm script named install but the commands get executed after the default npm install command has finished.
+        // Therefore, npm install ==> will install npm dependency and then restore nuget packages for dotnet
+        "install": "dotnet restore",
+        // npm run clean follow by npm install in the terminal and you have a fresh copy of the required npm and .NET dependencies
+        "clean": "npm run clean:dotnet && npm run clean:npm",
+        "clean:dotnet": "npm run clean:bin && npm run clean:obj",
+        "clean:bin": "del /q .\\bin\\*.* && for /d %i in (.\\bin\\*.*) do @rmdir /s /q \"%i\" ",
+        "clean:obj": "del /q .\\obj\\*.* && for /d %i in (.\\obj\\*.*) do @rmdir /s /q \"%i\" ",
+        "clean:npm": "del /q .\\node_modules\\*.* && for /d %i in (.\\node_modules\\*.*) do @rmdir /s /q \"%i\" ",
+        // npm run chrome ==> starts the Google Chrome Browser
+        "edge": "start microsoft-edge:http://localhost:5000",
+        "chrome": "start chrome http://localhost:5000",
+        "firefox": "start firefox http://localhost:5000"
+    }
 
 Version Range Definition
     version	            ==> Must match version exactly
