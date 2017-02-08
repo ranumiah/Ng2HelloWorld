@@ -1,14 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PairingComponent } from './pairing.component';
 import { AboutComponent } from './about.component';
 
+// Define Routing
+// The pathMatch property must be set for all redirects. In this case, the value 'full' denotes that the redirect should occur when the path is at the application root or is otherwise empty ('')
+const routes: Routes = [
+    { path: '', redirectTo: '/pairing', pathMatch: 'full' },
+    { path: 'pairing', component: PairingComponent },
+    { path: 'about', component: AboutComponent },
+];
+
+// RouterModule.forRoot(routes) ==> Register Routes to Angular
 @NgModule({
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        RouterModule.forRoot(routes),
     ],
     declarations: [
         AppComponent,
